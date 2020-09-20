@@ -1,0 +1,51 @@
+body{
+  background-image: url('../img/bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+.main{
+	background-color: rgba(106,120,136, 0.8);
+	backdrop-filter: blur(8px);
+	padding: 10px;
+	margin: 5%;
+}
+.active-cyan-2 input[type=text]{
+  font-size: 22px;
+  padding: 3px;
+  width: 80%;
+}
+.active-cyan-2 input[type=text]:focus:not([readonly]) {
+  border-bottom: 1px solid #4dd0e1;
+  box-shadow: 0 1px 0 0 #4dd0e1;
+  font-size: 22px;
+  padding: 3px;
+}
+.active-cyan-2 button{
+	padding: 5px;
+	font-size: 22px;
+	width: 20%;
+}
+.active-cyan-2 .fa {
+  color: #4dd0e1;
+}
+.support{
+	margin-top: 50px;
+}
+.support a{
+	color: #fff;
+}
+.support a:hover{
+	text-decoration: none;
+	color:#4dd0e1;
+}
+.weather{
+	color: #fff;
+}
+.weather h3{
+	font-weight: bold;
+}
+.weather p{
+	font-size: 20px;
+}

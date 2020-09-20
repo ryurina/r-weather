@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Weather</title>
+	<meta charset="utf-8">
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/master.css') }}">
+  	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="main">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10">
+					<img src="{{ url_for('static', filename='img/r-weather.png') }}" alt="r-weather" width="300" height="100">
+				</div>
+				<div class="col-md-2 support">
+					<h3><a href="https://github.com/ryurina/r-weather" target="__blank"><i class="fas fa-cogs" aria-hidden="true"></i> Support</a></h3>
+				</div>
+			</div>
+		</div>
+		<br>
+		<div class="container">
+			<form class="form-inline active-cyan-2" action="/" method="POST">
+			  <input name="city" class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Enter city (i.e: London)"
+			    aria-label="Search">
+			  <button type="submit" name="search" class="btn btn-info"><i class="fas fa-search" aria-hidden="true"></i> search </button>
+			</form>
+		</div>
+		
+		<div class="container weather">
+			<hr>
+
+			<div class="row">
+				<div class="col-md-4">
+					<h3>{{ city_name }}</h3>
+					<h1><img src="http://openweathermap.org/img/wn/{{icon}}@2x.png""> {{ temperature }}°C</h1>
+					<p>{{ weather_description }}</p>
+
+					<ul>
+						<li>Max temperature: {{ max_temp }}°C</li>
+						<li>Min temperature: {{ min_temp }}°C</li>
+					</ul>
+				</div>
+				<div class="col-md-4">
+					<h3>{{ date_now }}</h3>
+					<p>Position: </p>
+					<ul>
+						<li>Longitude  {{ lon }} </li>
+						<li>Latitude {{ lat }} </li>
+					</ul>
+					<p>Pressure: {{ pressure }}hPa</p>
+					<p>Humidity: {{ humidity }}%</p>
+				</div>
+				<div class="col-md-4">
+					<h3><img src="{{ url_for('static', filename='img/sunrise.png') }}" width="75" height="75"> {{ sunrise }}</h3>
+					<h3><img src="{{ url_for('static', filename='img/sunset.png') }}" width="75" height="75"> {{ sunset }}</h3>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+</html>
